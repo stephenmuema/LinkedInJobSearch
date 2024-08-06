@@ -92,7 +92,7 @@ def scrape_jobs(
         scraper = scraper_class(proxies=proxies)
         scraped_data: JobResponse = scraper.scrape(scraper_input)
         cap_name = site.value.capitalize()
-        logger.info(f"{cap_name} finished scraping")
+        logger.info(f"{cap_name} finished scraping job")
         return site.value, scraped_data
 
     site_to_jobs_dict = {}
