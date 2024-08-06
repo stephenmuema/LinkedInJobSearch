@@ -218,10 +218,8 @@ class JobPost(BaseModel):
     # linkedin specific
     job_level: str | None = None
 
-    # linkedin and indeed specific
     company_industry: str | None = None
 
-    # indeed specific
     company_addresses: str | None = None
     company_num_employees: str | None = None
     company_revenue: str | None = None
