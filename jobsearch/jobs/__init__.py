@@ -57,11 +57,6 @@ class JobType(Enum):
 
 
 class Country(Enum):
-    """
-    Gets the subdomain for Indeed and Glassdoor.
-    The second item in the tuple is the subdomain (and API country code if there's a ':' separator) for Indeed
-    The third item in the tuple is the subdomain (and tld if there's a ':' separator) for Glassdoor
-    """
 
     ARGENTINA = ("argentina", "ar", "com.ar")
     AUSTRALIA = ("australia", "au", "com.au")
@@ -127,9 +122,6 @@ class Country(Enum):
     VENEZUELA = ("venezuela", "ve")
     VIETNAM = ("vietnam", "vn", "com")
 
-    # internal for ziprecruiter
-    US_CANADA = ("usa/ca", "www")
-
     # internal for linkedin
     WORLDWIDE = ("worldwide", "www")
 
@@ -161,7 +153,6 @@ class Location(BaseModel):
         if isinstance(self.country, str):
             location_parts.append(self.country)
         elif self.country and self.country not in (
-            Country.US_CANADA,
             Country.WORLDWIDE,
         ):
             country_name = self.country.value[0]

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from jobspy import scrape_jobs
+from jobsearch import scrape_jobs
 
 
 def test_linkedin():

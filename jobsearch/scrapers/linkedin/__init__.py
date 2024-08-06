@@ -1,5 +1,5 @@
 """
-jobspy.scrapers.linkedin
+jobsearch.scrapers.linkedin
 ~~~~~~~~~~~~~~~~~~~
 
 This module contains routines to scrape LinkedIn.
@@ -53,7 +53,7 @@ class LinkedInScraper(Scraper):
             proxies=self.proxies,
             is_tls=False,
             has_retry=True,
-            delay=5,
+            delay=8,#Avoid detection with some delay
             clear_cookies=True,
         )
         self.session.headers.update(self.headers)
